@@ -10,4 +10,4 @@ settings.gradle
 *.iml
 *.ipr
 *.log
-allure-results/
+
