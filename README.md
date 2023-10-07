@@ -1,9 +1,6 @@
 # heroku_restfulbooker_tests
 
-
-<h1 >Демопроект автоматизации тестирования API на <a href="https://reqres.in/">reqres.in</a></h1>
-
-![WB_logo.jpg](media/logo/reqres_logo.png)
+<h1 >Демопроект автоматизации тестирования API на <a href="https://restful-booker.herokuapp.com/apidoc/index.html">restful-booker</a></h1>
 
 ##  Содержание 
 
