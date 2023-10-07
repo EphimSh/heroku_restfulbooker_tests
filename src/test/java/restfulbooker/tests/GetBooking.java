@@ -11,8 +11,8 @@ import restfulbooker.models.BookingResponseModel;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static restfulbooker.specs.Specifications.requestSpec;
 import static restfulbooker.utils.RandomUtils.faker;
-import static restfulbooker.specs.Specifications.getBookingRequestSpec;
 import static restfulbooker.specs.Specifications.getBookingWithStatusCode200;
 
 @Owner("EphimSh")
@@ -26,7 +26,7 @@ public class GetBooking extends TestBase {
     @DisplayName("Get booking data by random id; from 10 - 100")
     void getRandomBooking(){
         BookingResponseModel response = step("Make request", ()->
-                given(getBookingRequestSpec)
+                given(requestSpec)
                         .when()
                         .get("booking/" + faker.number().numberBetween(10, 100))
                         .then()

@@ -29,7 +29,7 @@ public class BookingActions extends TestBase {
     void createBookingWithRandomData() {
 
         CreateBookingResponseModel response = step("Make a request", () ->
-                given(createBookingRequestSpec)
+                given(requestSpec)
                         .body(randomBookingData())
                         .when()
                         .post("/booking")
@@ -41,8 +41,8 @@ public class BookingActions extends TestBase {
             assertNotNull(response.getBookingId());
         });
 
-        step("name is not empty", () -> {
-            assertNotEquals("", response.getBooking().getFirstName());
+        step("first name is not empty", () -> {
+            assertFalse(response.getBooking().getFirstName().isEmpty());
         });
     }
 
@@ -55,7 +55,7 @@ public class BookingActions extends TestBase {
 
 
         CreateBookingResponseModel response = step("Make a request", () ->
-                given(createBookingRequestSpec)
+                given(requestSpec)
                         .body(testData)
                         .when()
                         .post("/booking")
@@ -76,13 +76,13 @@ public class BookingActions extends TestBase {
     @Test
     @Story("Update a booking")
     @DisplayName("Create then update booking by id")
-    @Description("")
+    @Description("Create a booking, then update it using PUT request and verify the changes.")
     void createBookingWithTestDataThenUpdateIt() {
 
         String token = step("Getting a token to proceed the operations", () -> getToken());
         CreateBookingResponseModel.Booking testData = TestDataGenerator.generateTestData();
         CreateBookingResponseModel postResponse = step("Make POST request", () ->
-                given(createBookingRequestSpec)
+                given(requestSpec)
                         .body(testData)
                         .when()
                         .post("/booking")
@@ -98,7 +98,7 @@ public class BookingActions extends TestBase {
         String id = String.valueOf(postResponse.getBookingId());
         CreateBookingResponseModel.Booking updateBooking = TestDataGenerator.generateTestDataPutRequest();
         BookingResponseModel putResponse = step("Make PUT request", () ->
-                given(updateBookingRequestSpec)
+                given(requestSpec)
                         .header("Cookie", "token=" + token)
                         .body(updateBooking)
                         .when()
@@ -118,13 +118,13 @@ public class BookingActions extends TestBase {
     @Test
     @Story("Partial update a booking")
     @DisplayName("Create then partial update booking by id")
-    @Description("")
+    @Description("Create a booking, partially update it, and verify the changes.")
     void createBookingWithTestDataThenPatchIt() {
 
         String token = step("Getting a token to proceed the operations", () -> getToken());
         CreateBookingResponseModel.Booking testData = TestDataGenerator.generateTestData();
         CreateBookingResponseModel postResponse = step("Make POST request", () ->
-                given(createBookingRequestSpec)
+                given(requestSpec)
                         .body(testData)
                         .when()
                         .post("/booking")
@@ -142,7 +142,7 @@ public class BookingActions extends TestBase {
         testData.setLastName("Brownie");
 
         BookingResponseModel patchResponse = step("Make PATCH request", () ->
-                given(partialUpdateBookingRequestSpec)
+                given(requestSpec)
                         .header("Cookie", "token=" + token)
                         .body(testData)
                         .when()
@@ -161,13 +161,13 @@ public class BookingActions extends TestBase {
     @Test
     @Story("Delete booking")
     @DisplayName("Create then delete booking by id")
-    @Description("")
+    @Description("Create a booking, delete it, and verify the deletion process.")
     void createBookingWithTestDataThenDelete() {
 
         String token = step("Getting a token to proceed the operations", () -> getToken());
         CreateBookingResponseModel.Booking testData = TestDataGenerator.generateTestData();
         CreateBookingResponseModel postResponse = step("Make POST request", () ->
-                given(createBookingRequestSpec)
+                given(requestSpec)
                         .body(testData)
                         .when()
                         .post("/booking")
@@ -183,7 +183,7 @@ public class BookingActions extends TestBase {
         String id = String.valueOf(postResponse.getBookingId());
 
         ExtractableResponse deleteResponse = step("Make DELETE request", () ->
-                given(deleteBookingRequestSpec)
+                given(requestSpec)
                         .header("Cookie", "token=" + token)
                         .when()
                         .delete("/booking/" + id)
