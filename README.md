@@ -66,7 +66,7 @@ clean test
 
 > С помощью настроенного бота после завершения прогона в Jenkins поступают уведомления в Telegram.
 
-<img title="telegram bot" src="media/screenshots/TelegramBotAPI.png">
+<img title="telegram bot" src="media/screenshots/telegram.png">
 </p>
 
 <a id="allure"></a>
@@ -75,7 +75,7 @@ clean test
 ### Основное окно
 
 <p align="center">
-<img title="Allure Dashboard" src="media/screenshots/AllureDashboard.png">
+<img title="Allure Dashboard" src="media/screenshots/allure_report_dashboard.png">
 </p>
 
 ### Отчеты по тестам
@@ -84,7 +84,7 @@ clean test
 
 > В отчете по тестам присутствует развернутая информация по запросам и ответам.
 
-<img title="Allure Tests" src="media/screenshots/AllureWithInfo.png">
+<img title="Allure Tests" src="media/screenshots/allure_report_testcase.png">
 </p>
 
 <a id="allure-testops"></a>
@@ -93,18 +93,18 @@ clean test
 ### Основное окно
 
 <p align="center">
-<img title="Allure TestOps" src="media/screenshots/Dashboard_TO.png">
+<img title="Allure TestOps" src="media/screenshots/alluretestops_dashboard.png">
 </p>
 
 ### Иерархия тестов в ветке
 
 <p align="center">
-<img title="Allure TestOps" src="media/screenshots/TreeByFeatures_TO.png">
+<img title="Allure TestOps" src="media/screenshots/alluretestops_testcase.png">
 </p>
 
 <a id="jira"></a>
 ## <img src="media/logos/Jira.svg" width="25" height="25"/></a> Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-872)
 
 <p align="center">
-<img title="Jira" src="media/screenshots/JiraAPI.png">
+<img title="Jira" src="media/screenshots/jira.png">
 </p>
