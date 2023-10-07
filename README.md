@@ -27,9 +27,17 @@
 <a id="tools"></a>
 ## Технологии и инструменты
 
-| Java | IntelliJ Idea | Allure | Allure TestOps | GitHub | JUnit 5 | Gradle | REST Assured | Jenkins | Jira |
-| ---- | ------------- | ------ | ------------- | ------ | -------| ------ | ------------| --------| ----- |
-| <a href="https://www.java.com/"><img src="media/logos/Java.svg" width="50" height="50"  alt="Java"/></a> | <a id ="tech" href="https://www.jetbrains.com/idea/"><img src="media/logos/Intelij_IDEA.svg" width="50" height="50"  alt="IDEA"/></a> | <a href="https://github.com/allure-framework"><img src="media/logos/Allure_Report.svg" width="50" height="50"  alt="Allure"/></a> | <div align="center"><a href="https://qameta.io/"><img src="media/logos/AllureTestOps.svg" width="50" height="50"  alt="Allure TestOps"/></a></div> | <a href="https://github.com/"><img src="media/logos/GitHub.svg" width="50" height="50"  alt="Github"/></a> | <a href="https://junit.org/junit5/"><img src="media/logos/JUnit5.svg" width="50" height="50"  alt="JUnit 5"/></a> | <a href="https://gradle.org/"><img src="media/logos/Gradle.svg" width="50" height="50"  alt="Gradle"/></a> | <div align="center"><a href="https://rest-assured.io/"><img src="media/logos/RestAssured.svg" width="50" height="50"  alt="RestAssured"/></a></div>  |   <a href="https://www.jenkins.io/"><img src="media/logos/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a> | <a href="https://www.atlassian.com/ru/software/jira"><img src="media/logos/Jira.svg" width="50" height="50"  alt="Jira"/></a> |
+- [Java](https://www.java.com/) ![Java Logo](media/logos/Java.svg)
+- [IntelliJ Idea](https://www.jetbrains.com/idea/) ![IntelliJ Idea Logo](media/logos/Intelij_IDEA.svg)
+- [Allure](https://github.com/allure-framework/) ![Allure Logo](media/logos/Allure_Report.svg)
+- [Allure TestOps](https://qameta.io/) ![Allure TestOps Logo](media/logos/AllureTestOps.svg)
+- [GitHub](https://github.com/) ![GitHub Logo](media/logos/GitHub.svg)
+- [JUnit 5](https://junit.org/junit5/) ![JUnit 5 Logo](media/logos/JUnit5.svg)
+- [Gradle](https://gradle.org/) ![Gradle Logo](media/logos/Gradle.svg)
+- [REST Assured](https://rest-assured.io/) ![REST Assured Logo](media/logos/RestAssured.svg)
+- [Jenkins](https://www.jenkins.io/) ![Jenkins Logo](media/logos/Jenkins.svg)
+- [Jira](https://www.atlassian.com/ru/software/jira/) ![Jira Logo](media/logos/Jira.svg)
+
 
 
 
