@@ -57,12 +57,7 @@ clean test
 
 > Для запуска необходимо нажать "Собрать с параметрами".
 
-<a href="https://jenkins.autotests.cloud/job/AD_demo_api_reqres/"><img src="media/screenshots/JenkinsSborka.png" alt="Jenkins"/></a>
-
-> При клике на сборку после завершения можно увидеть артефакты запуска и полезные ссылки для более детального изучения прогона.
-
-<a href="https://jenkins.autotests.cloud/job/AD_demo_api_reqres/"><img src="media/screenshots/JenkinsIntegrations.png" alt="Jenkins"/></a>
-</p>
+<a href="https://jenkins.autotests.cloud/job/AD_demo_api_reqres/"><img src="media/screenshots/jenkins_build.png" alt="Jenkins"/></a>
 
 <a id="telegram"></a>
 ## <img src="media/logos/Telegram.svg" width="25" height="25"/></a> Уведомления в Telegram
