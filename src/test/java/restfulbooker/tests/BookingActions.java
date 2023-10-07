@@ -21,7 +21,6 @@ import static restfulbooker.utils.RandomUtils.*;
 @Feature("Booking")
 public class BookingActions extends TestBase {
 
-
     @Test
     @Story("Create a booking")
     @DisplayName("Creating booking with random data")
