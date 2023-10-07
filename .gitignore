@@ -1,0 +1,13 @@
+.gradle
+gradle/
+.idea
+build/
+notifications/
+gradlew
+gradlew.bat
+settings.gradle
+*.iws
+*.iml
+*.ipr
+*.log
+allure-results/
