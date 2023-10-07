@@ -27,16 +27,20 @@
 <a id="tools"></a>
 ## Технологии и инструменты
 
-- [Java](https://www.java.com/) ![Java Logo](media/logos/Java.svg)
-- [IntelliJ Idea](https://www.jetbrains.com/idea/) ![IntelliJ Idea Logo](media/logos/Intelij_IDEA.svg)
-- [Allure](https://github.com/allure-framework/) ![Allure Logo](media/logos/Allure_Report.svg)
-- [Allure TestOps](https://qameta.io/) ![Allure TestOps Logo](media/logos/AllureTestOps.svg)
-- [GitHub](https://github.com/) ![GitHub Logo](media/logos/GitHub.svg)
-- [JUnit 5](https://junit.org/junit5/) ![JUnit 5 Logo](media/logos/JUnit5.svg)
-- [Gradle](https://gradle.org/) ![Gradle Logo](media/logos/Gradle.svg)
-- [REST Assured](https://rest-assured.io/) ![REST Assured Logo](media/logos/RestAssured.svg)
-- [Jenkins](https://www.jenkins.io/) ![Jenkins Logo](media/logos/Jenkins.svg)
-- [Jira](https://www.atlassian.com/ru/software/jira/) ![Jira Logo](media/logos/Jira.svg)
+| [Java](https://www.java.com/) | [IntelliJ Idea](https://www.jetbrains.com/idea/) | [Allure](https://github.com/allure-framework) | [Allure TestOps](https://qameta.io/) | [GitHub](https://github.com/) | [JUnit 5](https://junit.org/junit5/) |
+|:-----------------------------:|:------------------------------------------------:|:-----------------------------------------:|:-----------------------------------:|:---------------------------:|:--------------------------------:|
+| <a href="https://www.java.com/"><img src="media/logos/Java.svg" width="50" height="50"  alt="Java"/></a> | <a href="https://www.jetbrains.com/idea/"><img src="media/logos/Intelij_IDEA.svg" width="50" height="50"  alt="IDEA"/></a> | <a href="https://github.com/allure-framework"><img src="media/logos/Allure_Report.svg" width="50" height="50"  alt="Allure"/></a> | <a href="https://qameta.io/"><img src="media/logos/AllureTestOps.svg" width="50" height="50"  alt="Allure TestOps"/></a> | <a href="https://github.com/"><img src="media/logos/GitHub.svg" width="50" height="50"  alt="Github"/></a> | <a href="https://junit.org/junit5/"><img src="media/logos/JUnit5.svg" width="50" height="50"  alt="JUnit 5"/></a> |
+
+### Two Separate Rows:
+
+```markdown
+| Java | IntelliJ Idea |
+| ---- | ------------- |
+| <a href="https://www.java.com/"><img src="media/logos/Java.svg" width="50" height="50"  alt="Java"/></a> | <a href="https://www.jetbrains.com/idea/"><img src="media/logos/Intelij_IDEA.svg" width="50" height="50"  alt="IDEA"/></a> |
+
+| Allure | Allure TestOps |
+| ------ | ------------- |
+| <a href="https://github.com/allure-framework"><img src="media/logos/Allure_Report.svg" width="50" height="50"  alt="Allure"/></a> | <a href="https://qameta.io/"><img src="media/logos/AllureTestOps.svg" width="50" height="50"  alt="Allure TestOps"/></a> |
 
 
 
