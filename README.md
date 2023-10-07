@@ -53,7 +53,7 @@ clean test
 ```
 
 <a id="jenkins"></a>
-## <img src="media/logo/Jenkins.svg" width="25" height="25"/></a> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/vskltsv_hw_rest-api_jenkins/)
+## <img src="media/logos/Jenkins.svg" width="25" height="25"/></a> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/vskltsv_hw_rest-api_jenkins/)
 
 <p align="center">
 
@@ -67,7 +67,7 @@ clean test
 </p>
 
 <a id="telegram"></a>
-## <img src="media/logo/Telegram.svg" width="25" height="25"/></a> Уведомления в Telegram
+## <img src="media/logos/Telegram.svg" width="25" height="25"/></a> Уведомления в Telegram
 
 <p >
 
@@ -77,7 +77,7 @@ clean test
 </p>
 
 <a id="allure"></a>
-## <img src="media/logo/Allure_Report.svg" width="25" height="25"/></a> [Allure Report](https://jenkins.autotests.cloud/job/vskltsv_hw_rest-api_jenkins/allure/) отчеты
+## <img src="media/logos/Allure_Report.svg" width="25" height="25"/></a> [Allure Report](https://jenkins.autotests.cloud/job/vskltsv_hw_rest-api_jenkins/allure/) отчеты
 
 ### Основное окно
 
@@ -95,7 +95,7 @@ clean test
 </p>
 
 <a id="allure-testops"></a>
-## <img src="media/logo/AllureTestOps.svg" width="25" height="25"/></a> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/3625/dashboards)
+## <img src="media/logos/AllureTestOps.svg" width="25" height="25"/></a> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/3625/dashboards)
 
 ### Основное окно
 
@@ -110,7 +110,7 @@ clean test
 </p>
 
 <a id="jira"></a>
-## <img src="media/logo/Jira.svg" width="25" height="25"/></a> Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-872)
+## <img src="media/logos/Jira.svg" width="25" height="25"/></a> Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-872)
 
 <p align="center">
 <img title="Jira" src="media/screenshots/JiraAPI.png">
