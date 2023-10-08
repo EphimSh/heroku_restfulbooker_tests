@@ -6,8 +6,6 @@
 
 * <a href="#tools">Технологии и инструменты</a>
 
-* <a href="#cases">Реализованные проверки</a>
-
 * <a href="#console">Запуск тестов из терминала</a>
 
 * <a href="#jenkins">Запуск тестов в Jenkins</a>
@@ -51,7 +49,7 @@ clean test
 ```
 
 <a id="jenkins"></a>
-## <img src="media/logos/Jenkins.svg" width="25" height="25"/></a> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/vskltsv_hw_rest-api_jenkins/)
+## <img src="media/logos/Jenkins.svg" width="25" height="25"/></a> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/EphimSh_qa_guru_20_heroku_restfulbooker/)
 
 <p align="center">
 
@@ -66,16 +64,15 @@ clean test
 
 > С помощью настроенного бота после завершения прогона в Jenkins поступают уведомления в Telegram.
 
-<img title="telegram bot" src="media/screenshots/TelegramBotAPI.png">
+<img title="telegram bot" src="media/screenshots/telegram.png">
 </p>
 
 <a id="allure"></a>
-## <img src="media/logos/Allure_Report.svg" width="25" height="25"/></a> [Allure Report](https://jenkins.autotests.cloud/job/vskltsv_hw_rest-api_jenkins/allure/) отчеты
-
+## <img src="media/logos/Allure_Report.svg" width="25" height="25"/></a> [Allure Report](https://jenkins.autotests.cloud/job/EphimSh_qa_guru_20_heroku_restfulbooker/allure/) отчеты
 ### Основное окно
 
 <p align="center">
-<img title="Allure Dashboard" src="media/screenshots/AllureDashboard.png">
+<img title="Allure Dashboard" src="media/screenshots/allure_report_dashboard.png">
 </p>
 
 ### Отчеты по тестам
@@ -84,27 +81,27 @@ clean test
 
 > В отчете по тестам присутствует развернутая информация по запросам и ответам.
 
-<img title="Allure Tests" src="media/screenshots/AllureWithInfo.png">
+<img title="Allure Tests" src="media/screenshots/allure_report_testcase.png">
 </p>
 
 <a id="allure-testops"></a>
-## <img src="media/logos/AllureTestOps.svg" width="25" height="25"/></a> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/3625/dashboards)
+## <img src="media/logos/AllureTestOps.svg" width="25" height="25"/></a> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/30743)
 
 ### Основное окно
 
 <p align="center">
-<img title="Allure TestOps" src="media/screenshots/Dashboard_TO.png">
+<img title="Allure TestOps" src="media/screenshots/alluretestops_dashboard.png">
 </p>
 
 ### Иерархия тестов в ветке
 
 <p align="center">
-<img title="Allure TestOps" src="media/screenshots/TreeByFeatures_TO.png">
+<img title="Allure TestOps" src="media/screenshots/alluretestops_testcase.png">
 </p>
 
 <a id="jira"></a>
-## <img src="media/logos/Jira.svg" width="25" height="25"/></a> Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-872)
+## <img src="media/logos/Jira.svg" width="25" height="25"/></a> Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-907)
 
 <p align="center">
-<img title="Jira" src="media/screenshots/JiraAPI.png">
+<img title="Jira" src="media/screenshots/jira.png">
 </p>
