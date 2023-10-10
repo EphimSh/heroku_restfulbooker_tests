@@ -18,21 +18,16 @@ import static restfulbooker.specs.Specifications.getBookingWithStatusCode200;
 @Owner("EphimSh")
 @Feature("Booking")
 public class GetBooking extends TestBase {
-
-
     @Test
     @Story("Get booking")
     @Description("Test the GET /booking/{id} endpoint randomly; to retrieve booking details.")
     @DisplayName("Get booking data by random id; from 10 - 100")
-    void getRandomBooking(){
-        BookingResponseModel response = step("Make request", ()->
-                given(requestSpec)
-                        .when()
-                        .get("booking/" + faker.number().numberBetween(10, 100))
-                        .then()
-                        .spec(getBookingWithStatusCode200)
-                        .extract().as(BookingResponseModel.class)
-                );
+    void getRandomBooking() {
+        BookingResponseModel response = step("Make request", () -> given(requestSpec).when()
+                .get("booking/" + faker.number().numberBetween(10, 100))
+                .then()
+                .spec(getBookingWithStatusCode200)
+                .extract().as(BookingResponseModel.class));
         step("Assert that first name is not empty", () -> {
             assertFalse(response.getFirstName().isEmpty());
         });

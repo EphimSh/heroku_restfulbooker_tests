@@ -14,6 +14,7 @@ import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static restfulbooker.specs.Specifications.*;
+
 @Owner("EphimSh")
 @Feature("Getting token")
 @Story("Authentication")
@@ -36,7 +37,6 @@ public class Login extends TestBase {
                         .then()
                         .spec(createTokenWithStatusCode200)
                         .extract().as(CreateTokenResponseModel.class));
-
         step("Check token length", () -> {
             assertEquals(15, response.getToken().length());
         });
@@ -58,7 +58,6 @@ public class Login extends TestBase {
                         .then()
                         .spec(createTokenWithBadCredentials)
                         .extract().as(CreateTokenResponseModel.class));
-
         step("Check reason message", () -> {
             assertEquals("Bad credentials", response.getReason());
         });
@@ -72,14 +71,12 @@ public class Login extends TestBase {
                 given(requestSpec)
                         .contentType("text/plain")
                         .body(
-                                "username:" + config.getUsername() + "\n" +
-                                "password:" + config.getPassword())
+                                "username:" + config.getUsername() + "\n" + "password:" + config.getPassword())
                         .when()
                         .post("/auth")
                         .then()
                         .spec(createTokenWithBadCredentials)
                         .extract().as(CreateTokenResponseModel.class));
-
         step("Check reason message", () -> {
             assertEquals("Bad credentials", response.getReason());
         });

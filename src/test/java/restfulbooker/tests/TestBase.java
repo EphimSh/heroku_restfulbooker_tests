@@ -21,18 +21,17 @@ public class TestBase {
         baseURI = config.getBaseUrl();
     }
 
-
     public static String getToken() {
         return given(requestSpec)
-                    .contentType(ContentType.JSON)
-                    .body(new CreateTokenRequestBodyModel() {{
-                        setUsername(config.getUsername());
-                        setPassword(config.getPassword());
-                    }})
-                    .when()
-                    .post("/auth")
-                    .then()
-                    .spec(createTokenWithStatusCode200)
-                    .extract().as(CreateTokenResponseModel.class).getToken();
+                .contentType(ContentType.JSON)
+                .body(new CreateTokenRequestBodyModel() {{
+                    setUsername(config.getUsername());
+                    setPassword(config.getPassword());
+                }})
+                .when()
+                .post("/auth")
+                .then()
+                .spec(createTokenWithStatusCode200)
+                .extract().as(CreateTokenResponseModel.class).getToken();
     }
 }

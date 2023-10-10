@@ -8,9 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import restfulbooker.models.GetBookingIdResponseModel;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
@@ -36,7 +34,6 @@ public class GetBookingIds extends TestBase {
                         .extract()
                         .jsonPath()
                         .getList(".", GetBookingIdResponseModel.class));
-
         step("Check that each id is unique", () -> {
             Set<Integer> uniqueIds = new HashSet<>();
             for (GetBookingIdResponseModel booking : response) {
@@ -60,7 +57,6 @@ public class GetBookingIds extends TestBase {
                         .extract()
                         .jsonPath()
                         .getList(".", GetBookingIdResponseModel.class));
-
         step("Check that each id is an Integer type", () -> {
             for (GetBookingIdResponseModel booking : response) {
                 assertInstanceOf(Integer.class, booking.getBookingId());
@@ -84,7 +80,6 @@ public class GetBookingIds extends TestBase {
                         .spec(getBookingIdsWithStatusCode500)
                         .extract().body()
                         .asString());
-
         step("Verify response for empty checkout date", () -> {
             assertEquals("Internal Server Error", response);
         });
