@@ -7,7 +7,6 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import restfulbooker.models.GetBookingIdResponseModel;
-import restfulbooker.tests.TestBase;
 
 import java.util.HashSet;
 import java.util.List;
@@ -15,10 +14,9 @@ import java.util.Set;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-import static restfulbooker.specs.Specifications.getBookingIdsWithStatusCode200;
-import static restfulbooker.specs.Specifications.requestSpec;
+import static org.junit.jupiter.api.Assertions.*;
+import static restfulbooker.specs.Specifications.*;
+
 
 @Owner("EphimSh")
 @Feature("Booking")
@@ -28,7 +26,7 @@ public class GetBookingIds extends TestBase {
     @Story("Get booking")
     @Description("Test retrieving a list of booking IDs")
     @DisplayName("Get Booking IDs")
-    void getBookingIds(){
+    void getBookingIds() {
         List<GetBookingIdResponseModel> response = step("Get list of booking ids", () ->
                 given(requestSpec)
                         .when()
@@ -52,7 +50,7 @@ public class GetBookingIds extends TestBase {
     @Story("Get booking")
     @Description("Test retrieving a list of booking IDs and checking their type")
     @DisplayName("Check Booking ID Types")
-    void checkBookingIdTypes(){
+    void checkBookingIdTypes() {
         List<GetBookingIdResponseModel> response = step("Get list of booking ids", () ->
                 given(requestSpec)
                         .when()
@@ -68,5 +66,28 @@ public class GetBookingIds extends TestBase {
                 assertInstanceOf(Integer.class, booking.getBookingId());
             }
         });
+    }
+
+    @Test
+    @Story("Get booking")
+    @Description("Test retrieving a list of booking IDs with specific filters including an empty checkout date")
+    @DisplayName("Get Booking IDs with Filters Including Empty Checkout Date")
+    void getBookingIdsWithFilters() {
+        String response = step("Get list of booking ids with specific firstname", () ->
+                given(requestSpec)
+                        .queryParam("firstname", "John")
+                        .queryParam("checkin", "1999-09-09")
+                        .queryParam("checkout", "")
+                        .when()
+                        .get("/booking")
+                        .then()
+                        .spec(getBookingIdsWithStatusCode500)
+                        .extract().body()
+                        .asString());
+
+        step("Verify response for empty checkout date", () -> {
+            assertEquals("Internal Server Error", response);
+        });
+
     }
 }

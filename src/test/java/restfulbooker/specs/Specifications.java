@@ -30,9 +30,23 @@ public class Specifications {
             .expectStatusCode(200)
             .expectBody(matchesJsonSchemaInClasspath("restfulbooker/schemas/create-token-response-schema.json"))
             .build();
+
+    public static ResponseSpecification createTokenWithBadCredentials = new ResponseSpecBuilder()
+            .log(LogDetail.STATUS)
+            .log(LogDetail.BODY)
+            .expectStatusCode(200)
+            .expectBody(matchesJsonSchemaInClasspath("restfulbooker/schemas/create-token-bad-credentials-response-schema.json"))
+            .build();
+
     public static ResponseSpecification getBookingIdsWithStatusCode200 = new ResponseSpecBuilder()
             .log(LogDetail.STATUS)
             .expectStatusCode(200)
+            .expectBody(matchesJsonSchemaInClasspath("restfulbooker/schemas/get-list-of-booking-id-schema.json"))
+            .build();
+
+    public static ResponseSpecification getBookingIdsWithStatusCode500 = new ResponseSpecBuilder()
+            .log(LogDetail.STATUS)
+            .expectStatusCode(500)
             .build();
     public static ResponseSpecification getBookingWithStatusCode200 = new ResponseSpecBuilder()
             .log(LogDetail.STATUS)
