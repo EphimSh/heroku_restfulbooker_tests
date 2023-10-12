@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class CreateBookingResponseModel {
     @JsonProperty("bookingid")
-    private int bookingId;
+    private Integer bookingId;
     @JsonProperty("booking")
     private Booking booking;
 
@@ -18,7 +18,7 @@ public class CreateBookingResponseModel {
         @JsonProperty("lastname")
         private String lastName;
         @JsonProperty("totalprice")
-        private int totalPrice;
+        private Integer totalPrice;
         @JsonProperty("depositpaid")
         private boolean depositPaid;
         @JsonProperty("bookingdates")

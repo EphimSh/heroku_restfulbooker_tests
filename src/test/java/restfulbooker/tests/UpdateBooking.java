@@ -1,12 +1,19 @@
 package restfulbooker.tests;
 
 import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import restfulbooker.helpers.annotations.BookingPartialUpdate;
+import restfulbooker.helpers.annotations.BookingUpdate;
+import restfulbooker.helpers.annotations.PositiveTest;
 import restfulbooker.models.BookingResponseModel;
 import restfulbooker.models.CreateBookingResponseModel;
 import restfulbooker.utils.TestDataGenerator;
+
+import java.io.IOException;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
@@ -16,6 +23,9 @@ import static restfulbooker.specs.Specifications.*;
 
 public class UpdateBooking extends TestBase {
     @Test
+    @PositiveTest
+    @BookingUpdate
+    @Severity(SeverityLevel.MINOR)
     @Story("Update a booking")
     @DisplayName("Create then update booking by id")
     @Description("Create a booking, then update it using PUT request and verify the changes.")
@@ -52,6 +62,9 @@ public class UpdateBooking extends TestBase {
     }
 
     @Test
+    @PositiveTest
+    @BookingPartialUpdate
+    @Severity(SeverityLevel.MINOR)
     @Story("Partial update a booking")
     @DisplayName("Create then partial update booking by id")
     @Description("Create a booking, partially update it, and verify the changes.")

@@ -9,8 +9,7 @@ import restfulbooker.models.CreateTokenResponseModel;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
-import static restfulbooker.specs.Specifications.createTokenWithStatusCode200;
-import static restfulbooker.specs.Specifications.requestSpec;
+import static restfulbooker.specs.Specifications.*;
 
 public class TestBase {
 
@@ -22,7 +21,7 @@ public class TestBase {
     }
 
     public static String getToken() {
-        return given(requestSpec)
+        return given(createTokenRequestSpec)
                 .contentType(ContentType.JSON)
                 .body(new CreateTokenRequestBodyModel() {{
                     setUsername(config.getUsername());

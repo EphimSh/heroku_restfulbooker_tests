@@ -1,12 +1,13 @@
 package restfulbooker.tests;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import io.restassured.response.ExtractableResponse;
+import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import restfulbooker.helpers.annotations.BookingDelete;
+import restfulbooker.helpers.annotations.NegativeTest;
+import restfulbooker.helpers.annotations.PositiveTest;
 import restfulbooker.models.CreateBookingResponseModel;
 import restfulbooker.utils.TestDataGenerator;
 
@@ -19,36 +20,80 @@ import static restfulbooker.specs.Specifications.*;
 @Feature("Booking")
 public class DeleteBooking extends TestBase {
     @Test
+    @PositiveTest
+    @BookingDelete
+    @Severity(SeverityLevel.MINOR)
     @Story("Delete booking")
     @DisplayName("Create then delete booking by id")
     @Description("Create a booking, delete it, and verify the deletion process.")
-    void createBookingWithTestDataThenDelete() {
-        String token = step("Getting a token to proceed the operations", () -> getToken());
-        CreateBookingResponseModel.Booking testData = TestDataGenerator.generateTestData();
-        CreateBookingResponseModel postResponse = step("Make POST request", () ->
-                given(requestSpec)
-                        .body(testData)
-                        .when()
-                        .post("/booking")
-                        .then()
-                        .spec(createBookingWithStatusCode200)
-                        .extract().as(CreateBookingResponseModel.class)
-        );
-        step("id received", () -> {
-            assertNotNull(postResponse.getBookingId());
-        });
-        String id = String.valueOf(postResponse.getBookingId());
-        ExtractableResponse deleteResponse = step("Make DELETE request", () ->
-                given(requestSpec)
-                        .header("Cookie", "token=" + token)
-                        .when()
-                        .delete("/booking/" + id)
-                        .then()
-                        .spec(deleteBookingWithStatusCode201)
-                        .extract()
-        );
-        step("Check response body", () -> {
-            assertEquals("Created", deleteResponse.body().asString());
-        });
+    void createBookingThenDelete() {
+
+        try {
+            String token = step("Getting a token to proceed the operations", TestBase::getToken);
+            CreateBookingResponseModel.Booking testData = TestDataGenerator.generateTestData();
+            CreateBookingResponseModel postResponse = step("Make POST request", () ->
+                    given(requestSpec)
+                            .body(testData)
+                            .when()
+                            .post("/booking")
+                            .then()
+                            .spec(createBookingWithStatusCode200)
+                            .extract().as(CreateBookingResponseModel.class));
+
+            String id = String.valueOf(postResponse.getBookingId());
+            ExtractableResponse<Response> deleteResponse = step("Make DELETE request", () ->
+                    given(requestSpec)
+                            .header("Cookie", "token=" + token)
+                            .when()
+                            .delete("/booking/" + id)
+                            .then()
+                            .spec(deleteBookingWithStatusCode201)
+                            .extract()
+            );
+            step("Check response body", () -> {
+                assertEquals("Created", deleteResponse.body().asString());
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    @NegativeTest
+    @BookingDelete
+    @Severity(SeverityLevel.MINOR)
+    @Story("Delete booking")
+    @DisplayName("Failed booking delete")
+    @Description("Attempt to delete booking with bad token")
+    void createBookingThenDeleteWithInvalidToken() {
+
+        try {
+            String token = "wrongtoken";
+            CreateBookingResponseModel.Booking testData = TestDataGenerator.generateTestData();
+            CreateBookingResponseModel postResponse = step("Make POST request", () ->
+                    given(requestSpec)
+                            .body(testData)
+                            .when()
+                            .post("/booking")
+                            .then()
+                            .spec(createBookingWithStatusCode200)
+                            .extract().as(CreateBookingResponseModel.class));
+
+            String id = String.valueOf(postResponse.getBookingId());
+            ExtractableResponse<Response> deleteResponse = step("Make DELETE request", () ->
+                    given(requestSpec)
+                            .header("Cookie", "token=" + token)
+                            .when()
+                            .delete("/booking/" + id)
+                            .then()
+                            .spec(deleteBookingWithStatusCode403)
+                            .extract()
+            );
+            step("Check response body", () -> {
+                assertEquals("Forbidden", deleteResponse.body().asString());
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

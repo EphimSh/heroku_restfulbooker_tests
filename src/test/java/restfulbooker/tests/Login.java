@@ -1,12 +1,12 @@
 package restfulbooker.tests;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import restfulbooker.helpers.annotations.Authentication;
+import restfulbooker.helpers.annotations.NegativeTest;
+import restfulbooker.helpers.annotations.PositiveTest;
 import restfulbooker.models.CreateTokenRequestBodyModel;
 import restfulbooker.models.CreateTokenResponseModel;
 
@@ -22,6 +22,9 @@ public class Login extends TestBase {
 
 
     @Test
+    @PositiveTest
+    @Authentication
+    @Severity(SeverityLevel.MINOR)
     @Description("Successful retrieval of authentication token")
     @DisplayName("Successful Get Token")
     void successfulGetToken() {
@@ -43,6 +46,9 @@ public class Login extends TestBase {
     }
 
     @Test
+    @NegativeTest
+    @Authentication
+    @Severity(SeverityLevel.MINOR)
     @Description("Attempt to retrieve authentication token with empty username")
     @DisplayName("Empty Username Get Token")
     void emptyUsernameGetToken() {
@@ -64,6 +70,9 @@ public class Login extends TestBase {
     }
 
     @Test
+    @NegativeTest
+    @Authentication
+    @Severity(SeverityLevel.MINOR)
     @Description("Attempt to retrieve authentication token with incorrect content type")
     @DisplayName("Wrong Content Type Get Token")
     void wrongContentTypeGetToken() {

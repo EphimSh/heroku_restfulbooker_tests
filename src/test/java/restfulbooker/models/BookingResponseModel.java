@@ -11,7 +11,7 @@ public class BookingResponseModel {
     @JsonProperty("lastname")
     private String lastName;
     @JsonProperty("totalprice")
-    private int totalPrice;
+    private Integer totalPrice;
     @JsonProperty("depositpaid")
     private boolean depositPaid;
     @JsonProperty("bookingdates")

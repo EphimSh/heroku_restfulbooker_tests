@@ -6,6 +6,8 @@ import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import restfulbooker.helpers.annotations.BookingGet;
+import restfulbooker.helpers.annotations.PositiveTest;
 import restfulbooker.models.GetBookingIdResponseModel;
 
 import java.util.*;
@@ -21,6 +23,8 @@ import static restfulbooker.specs.Specifications.*;
 public class GetBookingIds extends TestBase {
 
     @Test
+    @BookingGet
+    @PositiveTest
     @Story("Get booking")
     @Description("Test retrieving a list of booking IDs")
     @DisplayName("Get Booking IDs")
@@ -44,6 +48,8 @@ public class GetBookingIds extends TestBase {
     }
 
     @Test
+    @BookingGet
+    @PositiveTest
     @Story("Get booking")
     @Description("Test retrieving a list of booking IDs and checking their type")
     @DisplayName("Check Booking ID Types")
@@ -65,6 +71,8 @@ public class GetBookingIds extends TestBase {
     }
 
     @Test
+    @BookingGet
+    @PositiveTest
     @Story("Get booking")
     @Description("Test retrieving a list of booking IDs with specific filters including an empty checkout date")
     @DisplayName("Get Booking IDs with Filters Including Empty Checkout Date")
