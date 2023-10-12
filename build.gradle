@@ -56,3 +56,51 @@ tasks.withType(Test) {
         }
     }
 }
+
+task login(type: Test){
+    useJUnitPlatform{
+        includeTags("createToken")
+    }
+}
+
+task create_booking(type: Test){
+    useJUnitPlatform{
+        includeTags("createBooking")
+    }
+}
+
+task delete_booking(type: Test){
+    useJUnitPlatform{
+        includeTags("deleteBooking")
+    }
+}
+
+task get_booking(type: Test){
+    useJUnitPlatform{
+        includeTags("getBooking")
+    }
+}
+
+task partial_update(type: Test){
+    useJUnitPlatform{
+        includeTags("partialUpdate")
+    }
+}
+
+task update_booking(type: Test){
+    useJUnitPlatform{
+        includeTags("updateBooking")
+    }
+}
+
+task negative(type: Test){
+    useJUnitPlatform{
+        includeTags("negative")
+    }
+}
+
+task positive(type: Test){
+    useJUnitPlatform{
+        includeTags("positive")
+    }
+}
