@@ -19,7 +19,7 @@ public class TestDataGenerator {
     }
     private static final Properties props = loadProperties();
 
-    public static CreateBookingResponseModel.Booking generateTestData() {
+    public static CreateBookingResponseModel.Booking generateTestDataWithProperties() {
         CreateBookingResponseModel.Booking testData = new CreateBookingResponseModel.Booking();
         testData.setFirstName(props.getProperty("firstName"));
         testData.setLastName(props.getProperty("lastName"));
