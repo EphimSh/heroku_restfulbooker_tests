@@ -50,7 +50,7 @@ public class CreateBooking extends TestBase {
     @DisplayName("Creating booking using test data")
     @Description("Test the POST /booking endpoint to create a booking using test data")
     void createBookingWithTestData() {
-        CreateBookingResponseModel.Booking testData = TestDataGenerator.generateTestData();
+        CreateBookingResponseModel.Booking testData = TestDataGenerator.generateTestDataWithProperties();
         CreateBookingResponseModel response = step("Make a request", () ->
                 given(requestSpec)
                         .body(testData)
