@@ -27,7 +27,7 @@ public class DeleteBooking extends TestBase {
     @DisplayName("Create then delete booking by id")
     @Description("Create a booking, delete it, and verify the deletion process.")
     void createBookingThenDelete() {
-
+//todo remove try-catch block
         try {
             String token = step("Getting a token to proceed the operations", TestBase::getToken);
             CreateBookingResponseModel.Booking testData = TestDataGenerator.generateTestDataWithProperties();

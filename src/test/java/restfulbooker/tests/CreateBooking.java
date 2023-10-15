@@ -63,6 +63,7 @@ public class CreateBooking extends TestBase {
         step("Id is Integer Type", () -> {
             assertInstanceOf(Integer.class, response.getBookingId());
         });
+//todo add assertAll
         step("data is correct", () -> {
             assertEquals(response.getBooking().getFirstName(), testData.getFirstName());
             assertEquals(response.getBooking().getLastName(), testData.getLastName());
