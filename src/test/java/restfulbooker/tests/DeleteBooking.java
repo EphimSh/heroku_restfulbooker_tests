@@ -30,7 +30,7 @@ public class DeleteBooking extends TestBase {
 
         try {
             String token = step("Getting a token to proceed the operations", TestBase::getToken);
-            CreateBookingResponseModel.Booking testData = TestDataGenerator.generateTestData();
+            CreateBookingResponseModel.Booking testData = TestDataGenerator.generateTestDataWithProperties();
             CreateBookingResponseModel postResponse = step("Make POST request", () ->
                     given(requestSpec)
                             .body(testData)
@@ -69,7 +69,7 @@ public class DeleteBooking extends TestBase {
 
         try {
             String token = "wrongtoken";
-            CreateBookingResponseModel.Booking testData = TestDataGenerator.generateTestData();
+            CreateBookingResponseModel.Booking testData = TestDataGenerator.generateTestDataWithProperties();
             CreateBookingResponseModel postResponse = step("Make POST request", () ->
                     given(requestSpec)
                             .body(testData)
