@@ -13,8 +13,6 @@ import restfulbooker.models.BookingResponseModel;
 import restfulbooker.models.CreateBookingResponseModel;
 import restfulbooker.utils.TestDataGenerator;
 
-import java.io.IOException;
-
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
@@ -31,7 +29,7 @@ public class UpdateBooking extends TestBase {
     @Description("Create a booking, then update it using PUT request and verify the changes.")
     void createBookingWithTestDataThenUpdateIt() {
         String token = step("Getting a token to proceed the operations", () -> getToken());
-        CreateBookingResponseModel.Booking testData = TestDataGenerator.generateTestData();
+        CreateBookingResponseModel.Booking testData = TestDataGenerator.generateTestDataWithProperties();
         CreateBookingResponseModel postResponse = step("Make POST request", () ->
                 given(requestSpec)
                         .body(testData)
@@ -70,7 +68,7 @@ public class UpdateBooking extends TestBase {
     @Description("Create a booking, partially update it, and verify the changes.")
     void createBookingWithTestDataThenPatchIt() {
         String token = step("Getting a token to proceed the operations", () -> getToken());
-        CreateBookingResponseModel.Booking testData = TestDataGenerator.generateTestData();
+        CreateBookingResponseModel.Booking testData = TestDataGenerator.generateTestDataWithProperties();
         CreateBookingResponseModel postResponse = step("Make POST request", () ->
                 given(requestSpec)
                         .body(testData)
